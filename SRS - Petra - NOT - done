@@ -1,1 +1,131 @@
 
+Software Requirements Specification
+ 
+ 
+<Natural Milk>
+ 
+ 
+ 
+Software Requirements Specification
+ 
+<1>
+ 
+<4/12/2016>
+ 
+ 
+Jana Bancheva
+Petra Djigolova
+Borislav Gotsev
+Georgi Purvanov
+Boiko Andonov
+Desislava Belishka
+ 
+ 
+ 
+ 
+Prepared for
+Natural Milk Corporation
+
+Revision History
+ 
+ 
+Date	Description	Author	Comments	   
+<date>	<Version 1>	<Your Name>	<First Revision>	   
+ 	 	 	 	   
+ 	 	 	 	   
+ 	 	 	 	 
+ 
+ 
+Document Approval
+ 
+The following Software Requirements Specification has been accepted and approved by the following:
+ 
+Signature	Printed Name	Title	Date	   
+				   
+ 	 	 	 	   
+ 	 	 	 	 
+                                                                                                
+
+Table of Contents
+ 
+Revision History............................................................................................................................... ii
+Document Approval......................................................................................................................... Ii
+
+1.Introduction................................................................................................................................... 1
+1.1 Purpose..................................................................................................................................... 1
+1.2 Scope........................................................................................................................................ 1
+1.3 Definitions, Acronyms, and Abbreviations................................................................................. 1
+1.4 References................................................................................................................................ 1
+1.5 Overview.................................................................................................................................... 1
+2. General Description..................................................................................................................... 2
+2.1 Product Perspective.................................................................................................................. 2
+2.2 Product Functions...................................................................................................................... 2
+2.3 User Characteristics.................................................................................................................. 2
+2.4 General Constraints.......... ........................................................................................................ 2
+2.5 Assumptions and Dependencies............................................................................................... 2
+3. Specific Requirements................................................................................................................. 2
+3.1 External Interface Requirements............................................................................................... 3
+3.1.1 User Interfaces....................................................................................................................... 3
+3.1.2 Hardware Interfaces............................................................................................................... 3
+3.1.3 Software Interfaces................................................................................................................ 3
+3.1.4 Communications Interfaces.................................................................................................... 3
+3.2 Functional Requirements........................................................................................................... 3
+3.2.1 Functional Requirement or Feature #1>................................................................................ 3
+3.2.2 <Functional Requirement or Feature #2>.............................................................................. 3
+3.3 Use Cases................................................................................................................................. 3
+3.3.1 Use Case #1........................................................................................................................... 3
+3.3.2 Use Case #2........................................................................................................................... 3
+3.4 Classes / Objects....................................................................................................................... 3
+3.4.1 <Class / Object #1>................................................................................................................ 3
+3.4.2 <Class / Object #2>................................................................................................................ 3
+3.5 Non-Functional Requirements................................................................................................... 4
+3.5.1 Performance........................................................................................................................... 4
+3.5.2 Reliability................................................................................................................................. 4
+3.5.3 Availability............................................................................................................................... 4
+3.5.4 Security................................................................................................................................... 4
+3.5.5 Maintainability......................................................................................................................... 4
+3.5.6 Portability................................................................................................................................ 4
+3.6 Inverse Requirements............................................................................................................... 4
+3.7 Design Constraints.................................................................................................................... 4
+3.8 Logical Database Requirements............................................................................................... 4
+3.9 Other Requirements.................................................................................................................. 4
+4. Analysis Models........................................................................................................................... 4
+4.1 Sequence Diagrams.................................................................................................................. 5
+4.3 Data Flow Diagrams (DFD)...................................................................................................... 5
+4.2 State-Transition Diagrams (STD)............................................................................................. 5
+5. Change Management Process................................................................................................... 5
+A. Appendices................................................................................................................................. 5
+A.1 Appendix 1................................................................................................................................ 5
+A.2 Appendix 2................................................................................................................................ 5
+
+
+Petra’s ideas for use cases: 
+--	Allow multiple payment methods. The system shall display available payment methods for payment. The system shall allow user to select the payment method for order.
+1.   Introduction
+This section gives a scope description and overview of everything included in this SRS document. Also, the purpose for this document is described and a list of abbreviations and definitions is provided. The developers and the testers can use this document as a reference for developing the design and test plan documents.
+ 
+1.1 Purpose
+   The purpose of this document is to present a detailed description of the NaturalMilk’s website. It will explain the purpose and features of the system, the interfaces of the system, what the system will do, the constraints under which it must operate and how the system will react to external stimuli. This document is intended for both the stakeholders and the developers and QA engineers. This will give a clear idea on how the software should be developed by the development team for the end users.  This SRS will provide a solid base or foundation for the project. From this SRS, the designers (Paco Raban) can design low level design documents and the testers can create test plans and various test case documents. The main goal of the project is to design a scalable and extensible system for managing the sales of the organic products.
+1.2 Scope
+The software to be produced is an Online Organic (bio) store which will help the customers of the NaturalMilk to be able to purchase and dairy products from anywhere in the world. The core part of the project is the selling and shipping system to keep track of the sales and a well-designed user interface. This will be explained in detail in ‘3 – Functional Requirements’ section. There are three types of the end users for this online store NaturalMilk. The first ones are the customer who uses the system for the purchasing of dairy goods. The other end users are the admin user and the management users who are given separate authentication to the website.
+
+1.3 Definitions, Acronyms, and Abbreviations
+
+ 
+Ecwid	E-commerce platform enabling individuals and businesses to create online store or add those to existing websites	   
+Shopping Cart	An object that lists a Customer's selected Items, their applied
+promotions and gives them an option to check out	   
+Barcode 	A unique identifier assigned to single items	   
+User 	The person who operates the software product. User might be or might not be a registered customer	   
+Customer 	A person that is a user of the system but has created an account	   
+Item	An object that holds items available for purchase by the Customer	   
+Reorder 	The system process that automatically orders new stock of an item	   
+Transaction 	The information related to a customer's purchase that is logged	   
+Checkout 	The process a Customer goes through to purchase an Item	   
+Checkbox 
+	A user interface element that allows a User to inform the system that 
+he/she selected a particular item	   
+		 
+
+
+1.4 References
