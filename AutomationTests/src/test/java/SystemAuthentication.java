@@ -31,7 +31,7 @@ public class SystemAuthentication {
 
     @Test
     public void _1userEnter_WithoutLogIn_ShouldBeUnLogin() {
-        //Use Case ?1: Login like Guest user (without registration)
+        //Use Case 1: Login like Guest user (without registration)
         driver.get("https://naturalmilk.ecwid.com/");
         driver.manage().window().maximize();
 
@@ -41,7 +41,7 @@ public class SystemAuthentication {
 
     @Test
     public void _2userRegister_WithFreeEmail_ShouldBeRegister() {
-        //Use Case ?4: Register as a user
+        //Use Case 4: Register as a user
         registerUser(eMail);
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -53,24 +53,21 @@ public class SystemAuthentication {
 
     @Test
     public void _3userRegister_WithUsedEmail_ExpectedError() {
-        //Use Case ?4: Register as a user. Alternate scenario
+        //Use Case 4: Register as a user. Alternate scenario
         registerUser(eMail);
 
-        WebElement err = driver.findElement(By.cssSelector("html#ecwid_html body#ecwid_body.no-touch.no-media-queries.ecwid-customer-loggedOut.ecwid-lang-en.dragdrop-dropTarget.dragdrop-boundary.ecwid-starter-site.ecwid-loaded.ecwid-ready.ecwid-no-scroll div.ecwid-popup.ecwid-FormPopup.ecwid-register-popup.ecwid-responsive-popup.ecwid-no-touch.ecwid-supports-cssanimations.ecwid.ecwid-compact-popup div.popupContent div.ecwid-popup-touchLimiter table.ecwid-popup-container tbody tr td div.ecwid-popup-content table.ecwid-popup-contentPanel tbody tr td div.ecwid-form table tbody tr td table tbody tr td div.ecwid-FormPopup-fieldWrapper.ecwid-FormPopup-fieldWrapper-space table#gwt-uid-17.ecwid-fieldEnvelope.ecwid-fieldEnvelope-error tbody tr td div div.ecwid-fieldEnvelope-label"));
+        WebDriverWait pause = new WebDriverWait(driver, 10);
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[14]/div/div/table/tbody/tr[2]/td/div/table/tbody/tr[2]/td/div/table/tbody/tr[1]/td/table/tbody/tr[2]/td/div/table/tbody/tr[2]/td/div/div")));
+
+        WebElement err = driver.findElement(By.xpath("/html/body/div[14]/div/div/table/tbody/tr[2]/td/div/table/tbody/tr[2]/td/div/table/tbody/tr[1]/td/table/tbody/tr[2]/td/div/table/tbody/tr[2]/td/div/div"));
         assertEquals("Email already registered", err.getText());
     }
 
     @Test
     public void _4userLogin_ValidData_ShouldBeLogin() {
-        //Use Case ?2: Login like Registration user
+        //Use Case 2: Login like Registration user
         goToLoginData();
-
-        WebElement pass = driver.findElement(By.xpath("/html/body/div[14]/div/div/table/tbody/tr[2]/td/div/table/tbody/tr[2]/td/div/table/tbody/tr[1]/td/table/tbody/tr[2]/td/div/table/tbody/tr[1]/td/div/input"));
-        pass.clear();
-        pass.sendKeys(password);
-
-        WebElement sign = driver.findElement(By.xpath("/html/body/div[14]/div/div/table/tbody/tr[2]/td/div/table/tbody/tr[5]/td/table/tbody/tr/td/button"));
-        sign.click();
+        passedTruePassword();
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
@@ -81,7 +78,7 @@ public class SystemAuthentication {
 
     @Test
     public void _5userLogin_FalseData_ExpectedError() {
-        //Use Case ?2: Login like Registration user. Alternate scenario expected error
+        //Use Case 2: Login like Registration user. Alternate scenario expected error
         goToLoginData();
         passedWrongPassword();
 
@@ -94,7 +91,7 @@ public class SystemAuthentication {
 
     @Test
     public void _6userLogin_FalseData_GoToPasswordResetPage() {
-        //Use Case ?2: Login like Registration user. Alternate scenario user receives an email with instructions about his login credentials
+        //Use Case 2: Login like Registration user. Alternate scenario user receives an email with instructions about his login credentials
         goToLoginData();
         passedWrongPassword();
 
@@ -105,6 +102,139 @@ public class SystemAuthentication {
         forgottenPassword.click();
 
         assertEquals("https://naturalmilk.ecwid.com/#!/~/resetPassword", driver.getCurrentUrl());
+    }
+
+    @Test
+    public void _7loginUser_ChangePassword_ExpectedSucces() {
+        //Use Case 3: Change password
+        goToLoginData();
+        passedTruePassword();
+
+        driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
+        oldPass.clear();
+        oldPass.sendKeys(password);
+
+        WebElement newPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[2]/table/tbody/tr[1]/td/div/input"));
+        newPass.clear();
+        newPass.sendKeys("newpass");
+
+        WebElement retypePass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[3]/table/tbody/tr[1]/td/div/input"));
+        retypePass.clear();
+        retypePass.sendKeys("newpass");
+
+        WebElement save = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/button"));
+        save.click();
+
+        WebDriverWait pause = new WebDriverWait(driver, 20);
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.gwt-HTML.ecwid-DisappearingMessage-content")));
+        WebElement succes = driver.findElement(By.cssSelector("div.gwt-HTML.ecwid-DisappearingMessage-content"));
+        assertEquals("Password has been changed\nsuccessfully",succes.getText());
+    }
+
+    @Test
+    public void _8loginUserChangepassword_InkorektPassword_ExpectedError(){
+        //Use Case 3: Change password. Alternate scenario wrong password
+        goToLoginData();
+        passedTruePassword();
+
+        driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
+        oldPass.clear();
+        oldPass.sendKeys(password);
+
+        WebElement newPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[2]/table/tbody/tr[1]/td/div/input"));
+        newPass.clear();
+        newPass.sendKeys("123");
+
+        WebElement retypePass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[3]/table/tbody/tr[1]/td/div/input"));
+        retypePass.clear();
+        retypePass.sendKeys("123");
+
+        WebElement save = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/button"));
+        save.click();
+
+        WebDriverWait pause = new WebDriverWait(driver, 10);
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[2]/table/tbody/tr[2]/td/div/div")));
+        WebElement error = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[2]/table/tbody/tr[2]/td/div/div"));
+        assertEquals("Password must be at least 5 characters long", error.getText());
+    }
+
+    @Test
+    public void _9loginUserChangepassword_InkorektPassword_ExpectedError(){
+        //Use Case 3: Change password. Alternate scenario new password and confirm new password do not match
+        goToLoginData();
+        passedTruePassword();
+
+        driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
+        oldPass.clear();
+        oldPass.sendKeys(password);
+
+        WebElement newPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[2]/table/tbody/tr[1]/td/div/input"));
+        newPass.clear();
+        newPass.sendKeys(password);
+
+        WebElement retypePass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[3]/table/tbody/tr[1]/td/div/input"));
+        retypePass.clear();
+        retypePass.sendKeys("newpass");
+
+        WebElement save = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/button"));
+        save.click();
+
+        WebDriverWait pause = new WebDriverWait(driver, 10);
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[3]/table/tbody/tr[2]/td/div/div")));
+        WebElement error = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[3]/table/tbody/tr[2]/td/div/div"));
+        assertEquals("Passwords do not match", error.getText());
+    }
+
+    @Test
+    public void _9loginUserChangepassword_InkorektPassword_ExpectedError(){
+        //Use Case 3: Change password. Alternate scenario new password and confirm new password do not match
+        goToLoginData();
+        passedTruePassword();
+
+        driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
+        oldPass.clear();
+        oldPass.sendKeys("newpass");
+
+        WebElement newPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[2]/table/tbody/tr[1]/td/div/input"));
+        newPass.clear();
+        newPass.sendKeys(password);
+
+        WebElement retypePass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[3]/table/tbody/tr[1]/td/div/input"));
+        retypePass.clear();
+        retypePass.sendKeys(password);
+
+        WebElement save = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/button"));
+        save.click();
+
+        WebDriverWait pause = new WebDriverWait(driver, 10);
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[3]/table/tbody/tr[2]/td/div/div")));
+        WebElement error = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[3]/table/tbody/tr[2]/td/div/div"));
+        assertEquals("Passwords do not match", error.getText());
+    }
+
+    private void passedTruePassword() {
+        WebElement pass = driver.findElement(By.xpath("/html/body/div[14]/div/div/table/tbody/tr[2]/td/div/table/tbody/tr[2]/td/div/table/tbody/tr[1]/td/table/tbody/tr[2]/td/div/table/tbody/tr[1]/td/div/input"));
+        pass.clear();
+        pass.sendKeys(password);
+
+        WebElement sign = driver.findElement(By.xpath("/html/body/div[14]/div/div/table/tbody/tr[2]/td/div/table/tbody/tr[5]/td/table/tbody/tr/td/button"));
+        sign.click();
     }
 
     private void passedWrongPassword() {

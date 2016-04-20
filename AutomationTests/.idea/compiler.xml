@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="AutomationTests" />
+        <module name="AutomationTestsNaturalmilk" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="AutomationTests" target="1.5" />
+      <module name="AutomationTestsNaturalmilk" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
