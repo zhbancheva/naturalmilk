@@ -44,7 +44,7 @@ public class SystemAuthentication {
         //Use Case 4: Register as a user
         registerUser(eMail);
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement hello = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[1]/td/table/tbody/tr/td/div/div/span[1]"));
         String helloUser = "Hello, " + username;
@@ -69,7 +69,7 @@ public class SystemAuthentication {
         goToLoginData();
         passedTruePassword();
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement hello = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[1]/td/table/tbody/tr/td/div/div/span[1]"));
         String helloUser = "Hello, " + username;
@@ -112,7 +112,7 @@ public class SystemAuthentication {
 
         driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
         oldPass.clear();
@@ -137,13 +137,13 @@ public class SystemAuthentication {
 
     @Test
     public void _8loginUserChangepassword_InkorektPassword_ExpectedError(){
-        //Use Case 3: Change password. Alternate scenario wrong password
+        //Use Case 3: Change password. Alternate scenario invalid password
         goToLoginData();
         passedTruePassword();
 
         driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
         oldPass.clear();
@@ -174,7 +174,7 @@ public class SystemAuthentication {
 
         driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
         oldPass.clear();
@@ -198,14 +198,14 @@ public class SystemAuthentication {
     }
 
     @Test
-    public void _9loginUserChangepassword_InkorektPassword_ExpectedError(){
-        //Use Case 3: Change password. Alternate scenario new password and confirm new password do not match
+    public void _101loginUserChangepassword_WrongOldPassword_ExpectedError(){
+        //Use Case 3: Change password. Alternate wrong old password
         goToLoginData();
         passedTruePassword();
 
         driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
         oldPass.clear();
@@ -223,9 +223,31 @@ public class SystemAuthentication {
         save.click();
 
         WebDriverWait pause = new WebDriverWait(driver, 10);
-        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[3]/table/tbody/tr[2]/td/div/div")));
-        WebElement error = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[3]/table/tbody/tr[2]/td/div/div"));
-        assertEquals("Passwords do not match", error.getText());
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[2]/td/div/div")));
+        WebElement error = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[2]/td/div/div"));
+        assertEquals("Password is incorrect", error.getText());
+    }
+
+    @Test
+    public void _11user_ChooseProduct_SystemDisplaysProduct(){
+        //Use Case 5 related to navigate in site
+        driver.get("https://naturalmilk.ecwid.com/");
+        driver.manage().window().maximize();
+        
+        WebElement image = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/table/tbody/tr[2]/td[5]/div/span"));
+        image.click();
+
+        WebDriverWait pause = new WebDriverWait(driver, 10);
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[5]/div/table/tbody/tr[1]/td/div/table/tr[3]/td[3]/div/div/div[1]/a")));
+
+
+        WebElement product = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[5]/div/table/tbody/tr[1]/td/div/table/tr[3]/td[3]/div/div/div[1]/a"));
+        product.click();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        assertEquals("https://naturalmilk.ecwid.com/#!/%D0%A1%D0%A3%D0%A5-%D0%A1%D0%A3%D0%94%D0%96%D0%A3%D0%9A-%D0%9B%D0%A3%D0%9A%D0%90%D0%9D%D0%9A%D0%90-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BE%D0%B2%D0%B0-%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE-0-350%D0%BA%D0%B3/p/63576065/category=18483007", driver.getCurrentUrl());
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     private void passedTruePassword() {

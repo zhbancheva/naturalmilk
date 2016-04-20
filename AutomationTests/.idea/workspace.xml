@@ -39,8 +39,8 @@
       <file leaf-file-name="SystemAuthentication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/SystemAuthentication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="219" column="36" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
+            <state relative-caret-position="272">
+              <caret line="235" column="8" selection-start-line="235" selection-start-column="8" selection-end-line="235" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -231,6 +231,27 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SystemAuthentication" />
       <option name="METHOD_NAME" value="_6userLogin_FalseData_GoToPasswordResetPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="SystemAuthentication._11user_ChooseProduct_SystemDisplaysProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="AutomationTestsNaturalmilk" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SystemAuthentication" />
+      <option name="METHOD_NAME" value="_11user_ChooseProduct_SystemDisplaysProduct" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -478,16 +499,18 @@
       <listeners />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JUnit.SystemAuthentication" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._3userRegister_WithUsedEmail_ExpectedError" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._6userLogin_FalseData_GoToPasswordResetPage" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._11user_ChooseProduct_SystemDisplaysProduct" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="JUnit.SystemAuthentication" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._6userLogin_FalseData_GoToPasswordResetPage" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._3userRegister_WithUsedEmail_ExpectedError" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._11user_ChooseProduct_SystemDisplaysProduct" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._6userLogin_FalseData_GoToPasswordResetPage" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._3userRegister_WithUsedEmail_ExpectedError" />
       </list>
     </recent_temporary>
   </component>
@@ -505,39 +528,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SystemAuthentication - 2016.04.20 at 14h 03m 07s.xml">
+    <history-entry file="SystemAuthentication - 2016.04.20 at 16h 07m 46s.xml">
       <configuration name="SystemAuthentication" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication - 2016.04.20 at 14h 03m 31s.xml">
+    <history-entry file="SystemAuthentication - 2016.04.20 at 16h 12m 53s.xml">
       <configuration name="SystemAuthentication" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication - 2016.04.20 at 14h 03m 57s.xml">
+    <history-entry file="SystemAuthentication - 2016.04.20 at 16h 22m 01s.xml">
       <configuration name="SystemAuthentication" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication - 2016.04.20 at 14h 05m 38s.xml">
+    <history-entry file="SystemAuthentication - 2016.04.20 at 16h 30m 06s.xml">
       <configuration name="SystemAuthentication" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication - 2016.04.20 at 14h 06m 51s.xml">
+    <history-entry file="SystemAuthentication - 2016.04.20 at 16h 32m 09s.xml">
       <configuration name="SystemAuthentication" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication - 2016.04.20 at 14h 13m 07s.xml">
+    <history-entry file="SystemAuthentication - 2016.04.20 at 16h 38m 48s.xml">
       <configuration name="SystemAuthentication" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication - 2016.04.20 at 14h 15m 47s.xml">
+    <history-entry file="SystemAuthentication - 2016.04.20 at 16h 51m 00s.xml">
       <configuration name="SystemAuthentication" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication - 2016.04.20 at 14h 20m 37s.xml">
+    <history-entry file="SystemAuthentication - 2016.04.20 at 17h 02m 47s.xml">
       <configuration name="SystemAuthentication" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication - 2016.04.20 at 14h 24m 36s.xml">
-      <configuration name="SystemAuthentication" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__11user_ChooseProduct_SystemDisplaysProduct - 2016.04.20 at 16h 31m 02s.xml">
+      <configuration name="SystemAuthentication._11user_ChooseProduct_SystemDisplaysProduct" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication - 2016.04.20 at 14h 34m 12s.xml">
-      <configuration name="SystemAuthentication" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__11user_ChooseProduct_SystemDisplaysProduct - 2016.04.20 at 16h 32m 45s.xml">
+      <configuration name="SystemAuthentication._11user_ChooseProduct_SystemDisplaysProduct" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -548,7 +571,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4868217" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29147288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -607,8 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SystemAuthentication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="219" column="36" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
+        <state relative-caret-position="272">
+          <caret line="235" column="8" selection-start-line="235" selection-start-column="8" selection-end-line="235" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
