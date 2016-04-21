@@ -225,15 +225,31 @@ public class SystemAuthentication {
         bayProduct();
 
         WebDriverWait pause = new WebDriverWait(driver, 10);
-        pause.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[2]/div/div"), "1"));
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[1]/div/div/form/div/div/div[2]/div[2]/table/tbody/tr[1]/td/table/tbody/tr[1]/td/div/input")));
 
-        WebElement count = driver.findElement(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[2]/div/div"));
+        WebElement address = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[1]/div/div/form/div/div/div[2]/div[2]/table/tbody/tr[1]/td/table/tbody/tr[1]/td/div/input"));
+        address.clear();
+        address.sendKeys("<script>alert(55)</script>");
 
-        assertEquals("1", count.getText());
+        WebElement city = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[1]/div/div/form/div/div/div[2]/div[4]/table/tbody/tr[1]/td/div/input"));
+        city.clear();
+        city.sendKeys("<script>alert(55)</script>");
+
+        WebElement continueBay = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/table[2]/tbody/tr[1]/td/div/div/button"));
+        continueBay.click();
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        WebElement emailContinue = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/form/div/div[3]/div/table/tbody/tr[1]/td/div/div/button"));
+        emailContinue.click();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        assertEquals("https://naturalmilk.ecwid.com/#!/~/checkoutPD", driver.getCurrentUrl());
     }
 
     @Test
-    public void _13guest_BayProduct_AddToBag(){
+    public void _13guest_BayProduct_ExpectedError() {
         //Use cases 6 related to buy in site like guest
         driver.get("https://naturalmilk.ecwid.com/");
         driver.manage().window().maximize();
@@ -242,11 +258,15 @@ public class SystemAuthentication {
         bayProduct();
 
         WebDriverWait pause = new WebDriverWait(driver, 10);
-        pause.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[2]/div/div"), "1"));
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/table[2]/tbody/tr[1]/td/div/div/button")));
 
-        WebElement count = driver.findElement(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[2]/div/div"));
+        WebElement continueBay = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/table[2]/tbody/tr[1]/td/div/div/button"));
+        continueBay.click();
 
-        assertEquals("1", count.getText());
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/table[2]/tbody/tr[2]/td/div")));
+
+        WebElement err = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/table[2]/tbody/tr[2]/td/div"));
+        assertEquals("Please correct the highlighted fields.", err.getText());
     }
 
     private void goToChangePassword() {
@@ -270,6 +290,10 @@ public class SystemAuthentication {
 
         WebElement bay = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div/div[3]/div[2]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/div/div/div/table[1]/tbody/tr/td/div/div/div"));
         bay.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("https://naturalmilk.ecwid.com/#!/~/cart");
+        WebElement checkOut = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/table/tbody/tr/td/table/tbody/tr[3]/td/div/div/table/tbody/tr[1]/td[2]/table/tbody/tr[1]/td/div/div/div/table[7]/tbody/tr/td/div/div/div/div/div"));
+        checkOut.click();
     }
 
 
