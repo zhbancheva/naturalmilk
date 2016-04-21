@@ -19,9 +19,9 @@ public class SystemAuthentication {
 
     private WebDriver driver;
     private static final String time = Long.toString(new Date().getTime());
-    private static final String username = "username";
-    private static final String password = "password";
-    private static final String eMail = time + "@abv.bg";
+    private static final String username = "test";  //"username";
+    private static final String password = "1234test";  //"password";
+    private static final String eMail = "1234test" + "@abv.bg";  //time + "@abv.bg";
 
     @Before
     public void setUp() {
@@ -107,12 +107,7 @@ public class SystemAuthentication {
     @Test
     public void _7loginUser_ChangePassword_ExpectedSucces() {
         //Use Case 3: Change password
-        goToLoginData();
-        passedTruePassword();
-
-        driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        goToChangePassword();
 
         WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
         oldPass.clear();
@@ -132,18 +127,13 @@ public class SystemAuthentication {
         WebDriverWait pause = new WebDriverWait(driver, 20);
         pause.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.gwt-HTML.ecwid-DisappearingMessage-content")));
         WebElement succes = driver.findElement(By.cssSelector("div.gwt-HTML.ecwid-DisappearingMessage-content"));
-        assertEquals("Password has been changed\nsuccessfully",succes.getText());
+        assertEquals("Password has been changed\nsuccessfully", succes.getText());
     }
 
     @Test
-    public void _8loginUserChangepassword_InkorektPassword_ExpectedError(){
+    public void _8loginUserChangepassword_InkorektPassword_ExpectedError() {
         //Use Case 3: Change password. Alternate scenario invalid password
-        goToLoginData();
-        passedTruePassword();
-
-        driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        goToChangePassword();
 
         WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
         oldPass.clear();
@@ -167,14 +157,9 @@ public class SystemAuthentication {
     }
 
     @Test
-    public void _9loginUserChangepassword_InkorektPassword_ExpectedError(){
+    public void _9loginUserChangepassword_InkorektPassword_ExpectedError() {
         //Use Case 3: Change password. Alternate scenario new password and confirm new password do not match
-        goToLoginData();
-        passedTruePassword();
-
-        driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        goToChangePassword();
 
         WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
         oldPass.clear();
@@ -198,14 +183,9 @@ public class SystemAuthentication {
     }
 
     @Test
-    public void _101loginUserChangepassword_WrongOldPassword_ExpectedError(){
+    public void _101loginUserChangepassword_WrongOldPassword_ExpectedError() {
         //Use Case 3: Change password. Alternate wrong old password
-        goToLoginData();
-        passedTruePassword();
-
-        driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        goToChangePassword();
 
         WebElement oldPass = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/table/tbody/tr[2]/td/div/div/div/div[1]/table/tbody/tr[1]/td/div/input"));
         oldPass.clear();
@@ -229,24 +209,75 @@ public class SystemAuthentication {
     }
 
     @Test
-    public void _11user_ChooseProduct_SystemDisplaysProduct(){
+    public void _11user_ChooseProduct_SystemDisplaysProduct() {
         //Use Case 5 related to navigate in site
-        driver.get("https://naturalmilk.ecwid.com/");
-        driver.manage().window().maximize();
-        
-        WebElement image = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/table/tbody/tr[2]/td[5]/div/span"));
-        image.click();
+        chooseProduct();
+        assertEquals("https://naturalmilk.ecwid.com/#!/%D0%A1%D0%A3%D0%A5-%D0%A1%D0%A3%D0%94%D0%96%D0%A3%D0%9A-%D0%9B%D0%A3%D0%9A%D0%90%D0%9D%D0%9A%D0%90-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BE%D0%B2%D0%B0-%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE-0-350%D0%BA%D0%B3/p/63576065/category=18483007", driver.getCurrentUrl());
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    @Test
+    public void _12loginUser_BayProduct_AddToBag() {
+        //Use cases 6 related to buy in site like registration user
+        goToLoginData();
+        passedTruePassword();
+        chooseProduct();
+        bayProduct();
 
         WebDriverWait pause = new WebDriverWait(driver, 10);
-        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[5]/div/table/tbody/tr[1]/td/div/table/tr[3]/td[3]/div/div/div[1]/a")));
+        pause.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[2]/div/div"), "1"));
 
+        WebElement count = driver.findElement(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[2]/div/div"));
 
-        WebElement product = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[5]/div/table/tbody/tr[1]/td/div/table/tr[3]/td[3]/div/div/div[1]/a"));
-        product.click();
+        assertEquals("1", count.getText());
+    }
+
+    @Test
+    public void _13guest_BayProduct_AddToBag(){
+        //Use cases 6 related to buy in site like guest
+        driver.get("https://naturalmilk.ecwid.com/");
+        driver.manage().window().maximize();
+
+        chooseProduct();
+        bayProduct();
+
+        WebDriverWait pause = new WebDriverWait(driver, 10);
+        pause.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[2]/div/div"), "1"));
+
+        WebElement count = driver.findElement(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[2]/div/div"));
+
+        assertEquals("1", count.getText());
+    }
+
+    private void goToChangePassword() {
+        goToLoginData();
+        passedTruePassword();
+
+        driver.get("https://naturalmilk.ecwid.com/#!/~/accountSettings");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    private void bayProduct() {
+        WebDriverWait pause = new WebDriverWait(driver, 10);
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div/div[3]/div[2]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/div/div/div/div[11]/div/table/tbody/tr/td[1]/input")));
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        assertEquals("https://naturalmilk.ecwid.com/#!/%D0%A1%D0%A3%D0%A5-%D0%A1%D0%A3%D0%94%D0%96%D0%A3%D0%9A-%D0%9B%D0%A3%D0%9A%D0%90%D0%9D%D0%9A%D0%90-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BE%D0%B2%D0%B0-%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE-0-350%D0%BA%D0%B3/p/63576065/category=18483007", driver.getCurrentUrl());
+        WebElement date = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div/div[3]/div[2]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/div/div/div/div[11]/div/table/tbody/tr/td[1]/input"));
+        date.clear();
+        date.sendKeys("Apr 30, 2016");
+
+        WebElement bay = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div/div[3]/div[2]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/div/div/div/table[1]/tbody/tr/td/div/div/div"));
+        bay.click();
+    }
+
+
+    private void chooseProduct() {
+        driver.get("https://naturalmilk.ecwid.com/#!/%D0%9C%D0%B5%D1%81%D0%BD%D0%B8-%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B8/c/18483007/offset=0&sort=normal");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("https://naturalmilk.ecwid.com/#!/%D0%A1%D0%A3%D0%A5-%D0%A1%D0%A3%D0%94%D0%96%D0%A3%D0%9A-%D0%9B%D0%A3%D0%9A%D0%90%D0%9D%D0%9A%D0%90-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BE%D0%B2%D0%B0-%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE-0-350%D0%BA%D0%B3/p/63576065/category=18483007");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
