@@ -311,10 +311,10 @@ public class SystemAuthentication {
     }
 
     @Test
-    public void _16guestChoosedproducts_ChooseContinueShopping_GoToChoosedCategory() {
-        //Use Case 8 Alternate scenario. User choose to continue shopping.
-        driver.get("https://naturalmilk.ecwid.com/");
-        driver.manage().window().maximize();
+    public void _16userChoosedproducts_ChooseContinueShopping_GoToChoosedCategory() {
+        //Use Case 9 related to add to Shopping Bag and continue shopping
+        goToLoginData();
+        passedTruePassword();
 
         chooseProduct();
         bayProduct();
@@ -323,12 +323,38 @@ public class SystemAuthentication {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'Continue Shopping')]")));
 
-        WebElement clear = driver.findElement(By.xpath("//button[contains(text(),'Continue Shopping')]"));
-        clear.sendKeys(Keys.ENTER);
+        WebElement continueShopping = driver.findElement(By.xpath("//button[contains(text(),'Continue Shopping')]"));
+        continueShopping.sendKeys(Keys.ENTER);
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         assertEquals("https://naturalmilk.ecwid.com/#!/%D0%9C%D0%B5%D1%81%D0%BD%D0%B8-%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B8/c/18483007/offset=0&sort=normal", driver.getCurrentUrl());
+    }
+
+    @Test
+    public void _17userChoosedproducts_ChooseContinueShopping_GoToChoosedCategory() {
+        //Use Case 9 related to add to Shopping Bag, go to ShoppingBag, continue shopping and return to Shopping Bag
+        goToLoginData();
+        passedTruePassword();
+
+        chooseProduct();
+        bayProduct();
+
+        WebDriverWait pause = new WebDriverWait(driver, 20);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'Continue Shopping')]")));
+
+        WebElement continueShopping = driver.findElement(By.xpath("//button[contains(text(),'Continue Shopping')]"));
+        continueShopping.sendKeys(Keys.ENTER);
+
+        driver.navigate().refresh();
+
+        WebElement bag = driver.findElement(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[1]/div"));
+        bag.click();
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        assertEquals("https://naturalmilk.ecwid.com/#!/~/cart", driver.getCurrentUrl());
     }
 
 
@@ -425,6 +451,6 @@ public class SystemAuthentication {
 
     @After
     public void tearDown() {
-        //driver.close();
+       // driver.close();
     }
 }
