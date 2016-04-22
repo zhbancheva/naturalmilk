@@ -1,1 +1,15 @@
-
+Quality Control approach is focused on the process whereas the problems that customers may face can also occur elsewhere in the production 
+and distribution chain.
+A quality assurance approach therefore, includes the whole production and distribution system, from the suppliers of important goods, 
+foods, through the internal business management to the customer. 
+Quality assurance systems should be documented in a simple way to show who has responsibility for doing what and when. 
+The focus of quality assurance is prevention and this should mean that action is taken to meet a specification and prevent failures 
+from occurring a second time. This is done by planning, management action, agreements with key suppliers and other people in the distribution chain.
+The test approach will include positive and negative (break-it) functional tests. In addition, to ensure reliability throughout the iterative software 
+development cycle, regression tests will be performed on all iterations of the application.
+This Test Approach and the Test Plan, Test Cases were created using the Business Requirements.
+To ensure reliability, the test approach will include positive and negative (break-it) functional tests. In addition, to ensure reliability throughout 
+the iterative software development cycle, regression tests will be performed on all iterations of the application.
+A part of the approach in testing will be to initially perform a ‘Smoke Test’ upon delivery of the application for testing. 
+Testing will be performed from a black-box approach, not based on any knowledge of internal design or code. Tests will be designed around requirements 
+and functionality.
