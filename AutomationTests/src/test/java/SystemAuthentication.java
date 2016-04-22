@@ -1,5 +1,3 @@
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
-import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -20,9 +17,9 @@ public class SystemAuthentication {
 
     private WebDriver driver;
     private static final String time = Long.toString(new Date().getTime());
-    private static final String username = "test";  //"username";
-    private static final String password = "12test";  //"password";
-    private static final String eMail = "12test" + "@abv.bg";  //time + "@abv.bg";
+    private static final String username = "username";
+    private static final String password = "password";
+    private static final String eMail = time + "@abv.bg";
 
     @Before
     public void setUp() {
@@ -228,11 +225,11 @@ public class SystemAuthentication {
         WebElement checkOut = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/table/tbody/tr/td/table/tbody/tr[3]/td/div/div/table/tbody/tr[1]/td[2]/table/tbody/tr[1]/td/div/div/div/table[7]/tbody/tr/td/div/div/div/div/div"));
         checkOut.click();
 
-        WebDriverWait pause = new WebDriverWait(driver, 20);
+        WebDriverWait pause = new WebDriverWait(driver, 30);
         pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/table[2]/tbody/tr[1]/td/div/div/button")));
 
         WebElement continueBay = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/table[2]/tbody/tr[1]/td/div/div/button"));
-        continueBay.click();
+        continueBay.sendKeys(Keys.ENTER);
 
         pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/table[2]/tbody/tr[2]/td/div")));
 
@@ -262,11 +259,11 @@ public class SystemAuthentication {
         city.sendKeys("<script>alert(55)</script>");
 
         WebElement continueBay = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/table[2]/tbody/tr[1]/td/div/div/button"));
-        continueBay.click();
+        continueBay.sendKeys(Keys.ENTER);
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         WebElement emailContinue = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/section/div/div/div/div/div/table/tbody/tr[2]/td/div/div/div[2]/div/div[1]/div[2]/form/div/div[3]/div/table/tbody/tr[1]/td/div/div/button"));
-        emailContinue.click();
+        emailContinue.sendKeys(Keys.ENTER);
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         assertEquals("https://naturalmilk.ecwid.com/#!/~/checkoutPD", driver.getCurrentUrl());
@@ -299,10 +296,10 @@ public class SystemAuthentication {
 
         WebDriverWait pause = new WebDriverWait(driver, 20);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'Clear Bag')]")));
 
         WebElement clear = driver.findElement(By.xpath("//button[contains(text(),'Clear Bag')]"));
-        clear.sendKeys(Keys.ENTER);
+        pause.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Clear Bag')]")));
+        clear.click();
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
@@ -321,7 +318,7 @@ public class SystemAuthentication {
 
         WebDriverWait pause = new WebDriverWait(driver, 20);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'Continue Shopping')]")));
+        pause.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Continue Shopping')]")));
 
         WebElement continueShopping = driver.findElement(By.xpath("//button[contains(text(),'Continue Shopping')]"));
         continueShopping.sendKeys(Keys.ENTER);
@@ -349,6 +346,7 @@ public class SystemAuthentication {
 
         driver.navigate().refresh();
 
+        pause.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[1]/div")));
         WebElement bag = driver.findElement(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[1]/div"));
         bag.click();
 
@@ -475,6 +473,6 @@ public class SystemAuthentication {
 
     @After
     public void tearDown() {
-        // driver.close();
+        driver.close();
     }
 }
