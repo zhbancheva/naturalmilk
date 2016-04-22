@@ -29,12 +29,10 @@
       <file leaf-file-name="SystemAuthentication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/SystemAuthentication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-109">
-              <caret line="253" column="8" selection-start-line="253" selection-start-column="8" selection-end-line="253" selection-end-column="8" />
+            <state relative-caret-position="386">
+              <caret line="330" column="191" selection-start-line="330" selection-start-column="191" selection-end-line="330" selection-end-column="191" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#22073#22074#0" expanded="true" />
-                <element signature="e#22103#22104#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,7 +103,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -128,6 +125,7 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -136,57 +134,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="JUnit.SystemAuthentication._12loginUser_BayProduct_AddToBag">
-    <configuration default="false" name="SystemAuthentication" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SystemAuthentication._16guestChoosedproducts_ChooseContinueShopping_GoToChoosedCategory">
+    <configuration default="false" name="SystemAuthentication._12guest_BayProduct_ExpectedError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="AutomationTestsNaturalmilk" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SystemAuthentication" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="SystemAuthentication._12user_BayProduct_AddToBag" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="AutomationTestsNaturalmilk" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SystemAuthentication" />
-      <option name="METHOD_NAME" value="_12user_BayProduct_AddToBag" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="SystemAuthentication._13guest_BayProduct_AddToBag" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="AutomationTestsNaturalmilk" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SystemAuthentication" />
-      <option name="METHOD_NAME" value="_13guest_BayProduct_AddToBag" />
+      <option name="METHOD_NAME" value="_12guest_BayProduct_ExpectedError" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -200,14 +156,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SystemAuthentication._13guest_BayProduct_ExpectedError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SystemAuthentication._14gest_ChooseProduct_DisplayBag" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="AutomationTestsNaturalmilk" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SystemAuthentication" />
-      <option name="METHOD_NAME" value="_13guest_BayProduct_ExpectedError" />
+      <option name="METHOD_NAME" value="_14gest_ChooseProduct_DisplayBag" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -221,14 +177,56 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SystemAuthentication._12loginUser_BayProduct_AddToBag" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SystemAuthentication._13loginUser_BayProduct_SuccessOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="AutomationTestsNaturalmilk" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SystemAuthentication" />
-      <option name="METHOD_NAME" value="_12loginUser_BayProduct_AddToBag" />
+      <option name="METHOD_NAME" value="_13loginUser_BayProduct_SuccessOrder" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="AutomationTestsNaturalmilk" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SystemAuthentication" />
+      <option name="METHOD_NAME" value="_15guestChoosedproducts_ChooseClearBag_EmptyBag" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="SystemAuthentication._16guestChoosedproducts_ChooseContinueShopping_GoToChoosedCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="AutomationTestsNaturalmilk" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SystemAuthentication" />
+      <option name="METHOD_NAME" value="_16guestChoosedproducts_ChooseContinueShopping_GoToChoosedCategory" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -499,19 +497,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.SystemAuthentication" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._12user_BayProduct_AddToBag" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._13guest_BayProduct_AddToBag" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._13guest_BayProduct_ExpectedError" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._12loginUser_BayProduct_AddToBag" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._12guest_BayProduct_ExpectedError" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._14gest_ChooseProduct_DisplayBag" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._13loginUser_BayProduct_SuccessOrder" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._16guestChoosedproducts_ChooseContinueShopping_GoToChoosedCategory" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._12loginUser_BayProduct_AddToBag" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._13guest_BayProduct_ExpectedError" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._13guest_BayProduct_AddToBag" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._12user_BayProduct_AddToBag" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SystemAuthentication" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._16guestChoosedproducts_ChooseContinueShopping_GoToChoosedCategory" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._14gest_ChooseProduct_DisplayBag" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._13loginUser_BayProduct_SuccessOrder" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SystemAuthentication._12guest_BayProduct_ExpectedError" />
       </list>
     </recent_temporary>
   </component>
@@ -532,40 +530,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SystemAuthentication__12loginUser_BayProduct_AddToBag - 2016.04.21 at 13h 01m 04s.xml">
-      <configuration name="SystemAuthentication._12loginUser_BayProduct_AddToBag" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__15guestChoosedproducts_ChooseClearBag_EmptyBag - 2016.04.21 at 21h 42m 02s.xml">
+      <configuration name="SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication__12loginUser_BayProduct_AddToBag - 2016.04.21 at 13h 01m 56s.xml">
-      <configuration name="SystemAuthentication._12loginUser_BayProduct_AddToBag" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__15guestChoosedproducts_ChooseClearBag_EmptyBag - 2016.04.21 at 21h 43m 32s.xml">
+      <configuration name="SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication__12loginUser_BayProduct_AddToBag - 2016.04.21 at 13h 16m 56s.xml">
-      <configuration name="SystemAuthentication._12loginUser_BayProduct_AddToBag" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__15guestChoosedproducts_ChooseClearBag_EmptyBag - 2016.04.21 at 21h 44m 44s.xml">
+      <configuration name="SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication__13guest_BayProduct_ExpectedError - 2016.04.21 at 13h 02m 52s.xml">
-      <configuration name="SystemAuthentication._13guest_BayProduct_ExpectedError" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__15guestChoosedproducts_ChooseClearBag_EmptyBag - 2016.04.21 at 21h 46m 43s.xml">
+      <configuration name="SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication__13guest_BayProduct_ExpectedError - 2016.04.21 at 13h 04m 24s.xml">
-      <configuration name="SystemAuthentication._13guest_BayProduct_ExpectedError" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__15guestChoosedproducts_ChooseClearBag_EmptyBag - 2016.04.21 at 21h 47m 41s.xml">
+      <configuration name="SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication__13guest_BayProduct_ExpectedError - 2016.04.21 at 13h 05m 53s.xml">
-      <configuration name="SystemAuthentication._13guest_BayProduct_ExpectedError" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__15guestChoosedproducts_ChooseClearBag_EmptyBag - 2016.04.21 at 21h 48m 30s.xml">
+      <configuration name="SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication__13guest_BayProduct_ExpectedError - 2016.04.21 at 13h 07m 21s.xml">
-      <configuration name="SystemAuthentication._13guest_BayProduct_ExpectedError" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__15guestChoosedproducts_ChooseClearBag_EmptyBag - 2016.04.21 at 22h 57m 50s.xml">
+      <configuration name="SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication__13guest_BayProduct_ExpectedError - 2016.04.21 at 13h 09m 21s.xml">
-      <configuration name="SystemAuthentication._13guest_BayProduct_ExpectedError" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__15guestChoosedproducts_ChooseClearBag_EmptyBag - 2016.04.21 at 22h 59m 14s.xml">
+      <configuration name="SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication__13guest_BayProduct_ExpectedError - 2016.04.21 at 13h 13m 00s.xml">
-      <configuration name="SystemAuthentication._13guest_BayProduct_ExpectedError" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__15guestChoosedproducts_ChooseClearBag_EmptyBag - 2016.04.21 at 22h 59m 55s.xml">
+      <configuration name="SystemAuthentication._15guestChoosedproducts_ChooseClearBag_EmptyBag" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SystemAuthentication__13guest_BayProduct_ExpectedError - 2016.04.21 at 13h 16m 05s.xml">
-      <configuration name="SystemAuthentication._13guest_BayProduct_ExpectedError" configurationId="JUnit" />
+    <history-entry file="SystemAuthentication__16guestChoosedproducts_ChooseContinueShopping_GoToChoosedCategory - 2016.04.22 at 09h 42m 40s.xml">
+      <configuration name="SystemAuthentication._16guestChoosedproducts_ChooseContinueShopping_GoToChoosedCategory" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -575,7 +573,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30852714" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31007752" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -616,6 +614,26 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/SystemAuthentication.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/SystemAuthentication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/SystemAuthentication.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3740">
           <caret line="235" column="8" selection-start-line="235" selection-start-column="8" selection-end-line="235" selection-end-column="8" />
           <folding>
@@ -628,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,7 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,7 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="37" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -728,18 +739,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SystemAuthentication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-109">
-          <caret line="253" column="8" selection-start-line="253" selection-start-column="8" selection-end-line="253" selection-end-column="8" />
+        <state relative-caret-position="386">
+          <caret line="330" column="191" selection-start-line="330" selection-start-column="191" selection-end-line="330" selection-end-column="191" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#22073#22074#0" expanded="true" />
-            <element signature="e#22103#22104#0" expanded="true" />
           </folding>
         </state>
       </provider>
