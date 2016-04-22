@@ -357,6 +357,30 @@ public class SystemAuthentication {
         assertEquals("https://naturalmilk.ecwid.com/#!/~/cart", driver.getCurrentUrl());
     }
 
+    @Test
+    public void _18productsAddToBag_SignOutAndSignIn_ProductsMustBeInBag() {
+        //Use Case 10 related to cancel order
+        goToLoginData();
+        passedTruePassword();
+
+        chooseProduct();
+        bayProduct();
+
+        WebDriverWait pause = new WebDriverWait(driver, 10);
+        pause.until(ExpectedConditions.elementToBeClickable(By.linkText("Sign Out")));
+
+        WebElement signOut = driver.findElement(By.linkText("Sign Out"));
+        signOut.click();
+
+        driver.close();
+        driver = new FirefoxDriver();
+
+        goToLoginData();
+        passedTruePassword();
+
+        WebElement count = driver.findElement(By.xpath("/html/body/div[3]/header/div/div/div[2]/div/div/div[2]/div[2]/div/div"));
+        assertEquals("1", count.getText());
+    }
 
     private void goToChangePassword() {
         goToLoginData();
@@ -451,6 +475,6 @@ public class SystemAuthentication {
 
     @After
     public void tearDown() {
-       // driver.close();
+        // driver.close();
     }
 }
